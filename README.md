@@ -1,26 +1,41 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+```bash
+npm install
+```
+Second, set environment variables. Check the 'env.example' file and add them into de 'next.config' file.
 
+Third, run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Hardhat Project for Web3
+This project uses Hardhat to deploy contracts to the Blockchain and also to test Blockchain interaction.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Fourth, open a new terminal and create a localhost network:
+```shell
+npx hardhat node
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+compile the contracts
+```shell
+npx hardhat compile
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Fifth, open a new terminal and deploy a contract to the localhost network:
+```shell
+npx hardhat run scripts/deploy.js --network localhost
+```
+or
+```shell
+npx hardhat run scripts/deploy.js --network <network>
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
