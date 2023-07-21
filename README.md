@@ -1,13 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-
 ## Getting Started
 
 First, install the dependencies:
 ```bash
 npm install
 ```
-Second, set environment variables. Check the 'env.example' file and add them into de 'next.config' file.
+Second, set environment variables. Check the 'env.example' file and add them into de '.env.local' file.
 
 Third, run the development server:
 ```bash
@@ -17,17 +16,28 @@ npm run dev
 # Hardhat Project for Web3
 This project uses Hardhat to deploy contracts to the Blockchain and also to test Blockchain interaction.
 
-Fourth, open a new terminal and create a localhost network:
+For testing the Smart Contract:
+
+First, open a new terminal at the project path and create a localhost network:
 ```shell
 npx hardhat node
 ```
 
-compile the contracts
+Second, compile the contracts
 ```shell
 npx hardhat compile
 ```
 
-Fifth, open a new terminal and deploy a contract to the localhost network:
+Third, run the test cases under the /test folder
+```shell
+npx hardhat test
+```
+
+
+
+For deploying the Smart Contract:
+
+First, open a new terminal and deploy a contract to the localhost network:
 ```shell
 npx hardhat run scripts/deploy.js --network localhost
 ```
@@ -35,7 +45,7 @@ or
 ```shell
 npx hardhat run scripts/deploy.js --network <network>
 ```
-
+Second, update your environment variables. Check the 'env.example' file and add them into de '.env.local' file.
 
 ## Learn More
 
